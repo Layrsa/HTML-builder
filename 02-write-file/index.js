@@ -17,6 +17,7 @@ rl.question('Write something, pls: ', (answer) => {
 
 rl.on('line', (input) => {
   if (input === 'exit') {
+    process.stdout.write('Bye, good luck!');
     rl.close();
     process.exit(-1);
   }

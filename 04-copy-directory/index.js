@@ -11,8 +11,8 @@ mkdir(filesWayToCopy, { recursive: true })
   })
   .catch((error) => console.error(error));
 
-function copyDir(or, copy) {
-  readdir(or, { withFileTypes: true })
+async function copyDir(or, copy) {
+  await readdir(or, { withFileTypes: true })
     .then((data) => {
       data.forEach((file) => {
         const wayToOr = path.join(or, file.name);

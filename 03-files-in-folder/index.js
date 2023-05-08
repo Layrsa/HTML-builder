@@ -1,4 +1,3 @@
-const fs = require('fs');
 const path = require('path');
 const { readdir } = require('fs/promises');
 const { stat } = require('fs');
@@ -15,7 +14,7 @@ readdir(way, { withFileTypes: true })
         const ext = elArr[elArr.length - 1];
         stat(fileWay, (error, stats) => {
           const size = stats.size / 1024;
-          console.log(`${name} ${ext} ${size}kb`);
+          console.log(`${name} ${ext} ${size.toFixed(4)}kb`);
         });
       }
     });
